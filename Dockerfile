@@ -7,7 +7,10 @@ LABEL "com.github.actions.color"="blue"
 
 RUN apt-get update && apt-get install -y git
 
-ADD entrypoint.sh /entrypoint.sh
+RUN mkdir -p /assets
+COPY assets/* /assets/
+
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

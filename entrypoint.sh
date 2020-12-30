@@ -54,9 +54,9 @@ function cleanup_repo() {
 	printf "[\e[0;34mNOTICE\e[0m] Cleaning up unnecessary files.\n"
 
 	rm "$GITHUB_WORKSPACE/.gitignore"
-	mv assets/.gitignore-wpe "$GITHUB_WORKSPACE/.gitignore"
+	mv /assets/.gitignore-wpe "$GITHUB_WORKSPACE/.gitignore"
 
-	readarray -t filefolders < assets/remove-from-server
+	readarray -t filefolders < /assets/remove-from-server
 	for filefolder in "${filefolders[@]}"
 	do
 		rm -rf "$GITHUB_WORKSPACE/$filefolder"
@@ -75,7 +75,6 @@ function deploy() {
 function main() {
 	init_checks
 	setup_ssh_access
-	setup_wordpress_files
 	setup_remote
 	cleanup_repo
 	deploy
