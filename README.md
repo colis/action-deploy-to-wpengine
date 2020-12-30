@@ -37,7 +37,7 @@ jobs:
 
     - name: Build theme assets
       run: npm install && npm run build
-      working-directory: wp-content/themes/azek-direct
+      working-directory: wp-content/themes/your-theme
 
     - name: Deploy
       uses: colis/action-deploy-to-wpengine@master
