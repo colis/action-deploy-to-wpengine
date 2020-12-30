@@ -7,7 +7,7 @@ if [[ -z "$WPENGINE_SSH_PRIVATE_KEY" ]] || [[ -z "$WPENGINE_SSH_PUBLIC_KEY" ]] |
 	exit 1
 fi
 
-main_script="/main.sh"
-chmod +x /main.sh
+main_script="main.sh"
+chmod +x "$main_script"
 
 bash "$main_script"
