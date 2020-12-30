@@ -2,7 +2,10 @@
 
 An action to deploy a WordPress project to a **[WP Engine](https://wpengine.com)** site via git. [Read more](https://wpengine.com/git/) about WP Engine's git deployment support.
 
-## Example GitHub Action workflow
+## Usage
+
+1. Create a `.github/workflows/ci.yml` file in your project repo.
+2. Add the following code to the `ci.yml` file
 
 ```
 name: CI Workflow
@@ -42,6 +45,15 @@ jobs:
         WPENGINE_ENVIRONMENT_NAME: ${{ secrets.WPENGINE_ENVIRONMENT_NAME }}
         WPENGINE_SSH_PRIVATE_KEY: ${{ secrets.WPENGINE_SSH_PRIVATE_KEY }}
         WPENGINE_SSH_PUBLIC_KEY: ${{ secrets.WPENGINE_SSH_PUBLIC_KEY }}
+```
+3. Create a `.github/assets/.gitignore-wpe` file in your project repo containing untracked files and folders that WP Engine should ignore.
+4. Create a `.github/assets/blocklist` file in your project repo containing all files and folders that should not be copied to the WP Engine server with `git push` - e.g.
+```
+auth.json
+composer.json
+composer.lock
+README.md
+wp-content/themes/your-theme/assets
 ```
 
 ## Environment Variables & Secrets
