@@ -1,0 +1,177 @@
+############################
+# Operating Systems
+############################
+
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+############################
+# IDEs
+############################
+
+### PHPStorm ###
+.idea
+
+### Sublime ###
+*.sublime-workspace
+
+### VisualStudioCode ###
+*.code-workspace
+
+############################
+# Miscellaneous
+############################
+
+### Backup ###
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+### Large file types ###
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi
+
+### Elastic Beanstalk Files ###
+.elasticbeanstalk/
+
+### Node ###
+*.log
+node_modules/
+
+### Local by Flywheel ###
+local-by-flywheel-demo-urls.php
+local-adminer-*.php
+local-phpinfo.php
+
+### WP-CLI ###
+.wp-cli/config.yml
+wp-cli.yml
+wp-cli.local.yml
+
+### Composer ###
+composer_vendor/
+
+### WordPress ###
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+/sitemap.xml
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+/wp-content/blogs.dir/
+/wp-content/cache/
+/wp-content/languages/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/install.php
+/wp-content/db.php
+
+### WPEngine ###
+.htaccess
+/wp-content/advanced-cache.php
+/wp-content/object-cache.php
+/wp-content/backup*
+/wp-content/mu-plugins/force-strong-passwords/
+/wp-content/mu-plugins/mu-plugin.php
+/wp-content/mu-plugins/slt-force-strong-passwords.php
+/wp-content/mu-plugins/stop-long-comments.php
+/wp-content/mu-plugins/wpengine-common/
+
+############################
+# Pragmatic
+############################
+
+### Pragmatic Legacy ###
+*.mmdb
+srdb*/
+
+### Standard project files. ###
+/node_modules/
+asset-manifest.json
+!/wp-content/vendor
+
+### Plugins ###
+# NB: This section should probably be empty.
+#     All our plugins are either in VC, or managed by Composer
+#     Either way, we want them in this commit for WPE deployment
+# Only add plugins you DON'T want deployed to WPE ...
+!/wp-content/plugins/
+
+########################################################
+# Add your project-specific ignore files here!
+########################################################
