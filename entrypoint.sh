@@ -56,7 +56,7 @@ function cleanup_repo() {
 	rm "$GITHUB_WORKSPACE/.gitignore"
 	mv "$GITHUB_WORKSPACE/.github/assets/.gitignore-wpe" "$GITHUB_WORKSPACE/.gitignore"
 
-	readarray -t filefolders < "$GITHUB_WORKSPACE/.github/assets/remove-from-server"
+	readarray -t filefolders < "$GITHUB_WORKSPACE/.github/assets/blocklist"
 	for filefolder in "${filefolders[@]}"
 	do
 		rm -rf "$GITHUB_WORKSPACE/$filefolder"
