@@ -40,7 +40,7 @@ jobs:
       working-directory: wp-content/themes/your-theme
 
     - name: Deploy
-      uses: colis/action-deploy-to-wpengine@master
+      uses: colis/action-deploy-to-wpengine@main
       env:
         WPENGINE_ENVIRONMENT_NAME: ${{ secrets.WPENGINE_ENVIRONMENT_NAME }}
         WPENGINE_SSH_PRIVATE_KEY: ${{ secrets.WPENGINE_SSH_PRIVATE_KEY }}
