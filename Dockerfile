@@ -1,4 +1,4 @@
-FROM debian:9.7-slim
+FROM debian:11.6-slim
 
 LABEL "com.github.actions.name"="Deploy WordPress"
 LABEL "com.github.actions.description"="An action to deploy a WordPress project to a WP Engine site via git."
