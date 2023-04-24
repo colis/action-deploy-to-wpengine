@@ -15,6 +15,10 @@ function init_checks() {
 	fi
 }
 
+function setup_safe_directory() {
+	git config --global --add safe.directory "$GITHUB_WORKSPACE"
+}
+
 function setup_ssh_access() {
 	printf "[\e[0;34mNOTICE\e[0m] Setting up SSH access to server.\n"
 
@@ -74,6 +78,7 @@ function deploy() {
 
 function main() {
 	init_checks
+	setup_safe_directory
 	setup_ssh_access
 	setup_remote
 	cleanup_repo
