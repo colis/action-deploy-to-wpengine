@@ -20,14 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout files and setup environment
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
     - name: Set up Node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
-        node-version: 12.x
+        node-version: 16.x
 
     - name: Set up authentication for SatisPress packages
       run: composer config ${{ secrets.SATISPRESS_URL }} ${{ secrets.SATISPRESS_API_KEY }} satispress
