@@ -10,7 +10,7 @@ function init_checks() {
 	# Check required env variables
 	if [[ -z "$WPENGINE_SSH_PRIVATE_KEY" ]] || [[ -z "$WPENGINE_SSH_PUBLIC_KEY" ]] || [[ -z "$WPENGINE_ENVIRONMENT_NAME" ]]; then
 		missing_secret="WPENGINE_SSH_PRIVATE_KEY and/or WPENGINE_SSH_PUBLIC_KEY and/or WPENGINE_ENVIRONMENT_NAME"
-		printf "[\e[0;31mERROR\e[0m] Secret \`$missing_secret\` is missing. Please add it to this action for proper execution.\nRefer https://github.com/colis/action-deploy-to-wpengine for more information.\n"
+		printf "[\e[0;31mERROR\e[0m] Secret %s is missing. Please add it to this action for proper execution.\nRefer https://github.com/colis/action-deploy-to-wpengine for more information.\n" "$missing_secret"
 		exit 1
 	fi
 }
@@ -51,7 +51,7 @@ function setup_remote() {
 
 	git config user.name "Automated Deployment"
 	git config user.email "wp-support@americaneagle.com"
-	git remote add $WPENGINE_ENV git@$WPENGINE_HOST:$WPENGINE_ENV/$WPENGINE_ENVIRONMENT_NAME.git
+	git remote add "$WPENGINE_ENV git@$WPENGINE_HOST:$WPENGINE_ENV/$WPENGINE_ENVIRONMENT_NAME.git"
 }
 
 function cleanup_repo() {
@@ -63,17 +63,17 @@ function cleanup_repo() {
 	readarray -t filefolders < "$GITHUB_WORKSPACE/.github/assets/blocklist"
 	for filefolder in "${filefolders[@]}"
 	do
-		rm -rf "$GITHUB_WORKSPACE/$filefolder"
+		rm -rf "$GITHUB_WORKSPACE/${filefolder:?}"
 	done
 }
 
 function deploy() {
-	printf "[\e[0;34mNOTICE\e[0m] Deploying $BRANCH to $WPENGINE_ENV.\n"
+	printf "[\e[0;34mNOTICE\e[0m] Deploying %s to %s.\n" "$BRANCH" "$WPENGINE_ENV"
 
 	git add --all
 	git commit -m "GitHub Actions Deployment"
 	git status
-	git push -fu $WPENGINE_ENV $BRANCH:master
+	git push -fu "$WPENGINE_ENV $BRANCH:master"
 }
 
 function main() {
