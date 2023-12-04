@@ -51,7 +51,7 @@ function setup_remote() {
 
 	git config user.name "Automated Deployment"
 	git config user.email "wp-support@americaneagle.com"
-	git remote add "$WPENGINE_ENV git@$WPENGINE_HOST:$WPENGINE_ENV/$WPENGINE_ENVIRONMENT_NAME.git"
+	git remote add "$WPENGINE_ENV" "git@$WPENGINE_HOST:$WPENGINE_ENV/$WPENGINE_ENVIRONMENT_NAME.git"
 }
 
 function cleanup_repo() {
@@ -73,7 +73,7 @@ function deploy() {
 	git add --all
 	git commit -m "GitHub Actions Deployment"
 	git status
-	git push -fu "$WPENGINE_ENV $BRANCH:master"
+	git push -fu "$WPENGINE_ENV" "$BRANCH:master"
 }
 
 function main() {
